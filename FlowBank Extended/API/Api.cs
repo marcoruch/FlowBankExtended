@@ -15,7 +15,7 @@ namespace FlowBank_Extended.API
 
         private static readonly string WebToken = System.Configuration.ConfigurationManager.AppSettings.Get("Bearer");
 
-        public Api()
+        public Api() 
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", WebToken);
         }

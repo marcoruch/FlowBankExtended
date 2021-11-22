@@ -44,6 +44,17 @@
             this.pnlMainView = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabMainWindow = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pieChartPositions = new LiveCharts.WinForms.PieChart();
+            this.tabPositionWindow = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pieChart2 = new LiveCharts.WinForms.PieChart();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPerformanceChartDaySkipperHolder = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,14 +67,7 @@
             this.rdbPerformanceOneYear = new System.Windows.Forms.RadioButton();
             this.rdbPerformanceYTD = new System.Windows.Forms.RadioButton();
             this.cartesianChartPerformance = new LiveCharts.WinForms.CartesianChart();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pieChartPositions = new LiveCharts.WinForms.PieChart();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabPositionWindow = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pieChart2 = new LiveCharts.WinForms.PieChart();
+            this.stockListPanel = new System.Windows.Forms.Panel();
             this.tlpOverallLayout.SuspendLayout();
             this.tlpMenuBar.SuspendLayout();
             this.tlpMenuLeft.SuspendLayout();
@@ -72,10 +76,15 @@
             this.pnlMainView.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabMainWindow.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tlpPerformanceChartDaySkipperHolder.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tlpPerformanceChartDaySkipperHolder.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpOverallLayout
@@ -95,7 +104,7 @@
             this.tlpOverallLayout.RowCount = 2;
             this.tlpOverallLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tlpOverallLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpOverallLayout.Size = new System.Drawing.Size(3840, 2160);
+            this.tlpOverallLayout.Size = new System.Drawing.Size(7680, 2186);
             this.tlpOverallLayout.TabIndex = 1;
             // 
             // tlpMenuBar
@@ -114,7 +123,7 @@
             this.tlpMenuBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.044383F));
             this.tlpMenuBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tlpMenuBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tlpMenuBar.Size = new System.Drawing.Size(528, 2025);
+            this.tlpMenuBar.Size = new System.Drawing.Size(1056, 2051);
             this.tlpMenuBar.TabIndex = 3;
             // 
             // btnExit
@@ -123,10 +132,10 @@
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(0, 1932);
+            this.btnExit.Location = new System.Drawing.Point(0, 1958);
             this.btnExit.Margin = new System.Windows.Forms.Padding(0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(528, 93);
+            this.btnExit.Size = new System.Drawing.Size(1056, 93);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Beenden";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -146,7 +155,7 @@
             this.tlpMenuLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenuLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenuLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpMenuLeft.Size = new System.Drawing.Size(522, 1610);
+            this.tlpMenuLeft.Size = new System.Drawing.Size(1050, 1634);
             this.tlpMenuLeft.TabIndex = 3;
             // 
             // btnPositionDetails
@@ -154,9 +163,9 @@
             this.btnPositionDetails.BackColor = System.Drawing.Color.LimeGreen;
             this.btnPositionDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPositionDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPositionDetails.Location = new System.Drawing.Point(3, 405);
+            this.btnPositionDetails.Location = new System.Drawing.Point(3, 411);
             this.btnPositionDetails.Name = "btnPositionDetails";
-            this.btnPositionDetails.Size = new System.Drawing.Size(516, 396);
+            this.btnPositionDetails.Size = new System.Drawing.Size(1044, 402);
             this.btnPositionDetails.TabIndex = 1;
             this.btnPositionDetails.Text = "Hauptmenü";
             this.btnPositionDetails.UseVisualStyleBackColor = false;
@@ -169,7 +178,7 @@
             this.btnMainView.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMainView.Location = new System.Drawing.Point(3, 3);
             this.btnMainView.Name = "btnMainView";
-            this.btnMainView.Size = new System.Drawing.Size(516, 396);
+            this.btnMainView.Size = new System.Drawing.Size(1044, 402);
             this.btnMainView.TabIndex = 0;
             this.btnMainView.Text = "Hauptmenü";
             this.btnMainView.UseVisualStyleBackColor = false;
@@ -180,9 +189,9 @@
             this.pnlDrag.BackColor = System.Drawing.Color.SlateGray;
             this.pnlDrag.Controls.Add(this.tableLayoutPanel2);
             this.pnlDrag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDrag.Location = new System.Drawing.Point(531, 3);
+            this.pnlDrag.Location = new System.Drawing.Point(1059, 3);
             this.pnlDrag.Name = "pnlDrag";
-            this.pnlDrag.Size = new System.Drawing.Size(3306, 129);
+            this.pnlDrag.Size = new System.Drawing.Size(6618, 129);
             this.pnlDrag.TabIndex = 5;
             this.pnlDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlDrag_MouseMove);
             // 
@@ -256,7 +265,7 @@
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLogo.Location = new System.Drawing.Point(3, 3);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(522, 129);
+            this.pnlLogo.Size = new System.Drawing.Size(1050, 129);
             this.pnlLogo.TabIndex = 6;
             // 
             // pnlMainView
@@ -264,9 +273,9 @@
             this.pnlMainView.AutoSize = true;
             this.pnlMainView.Controls.Add(this.tabControl);
             this.pnlMainView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainView.Location = new System.Drawing.Point(531, 138);
+            this.pnlMainView.Location = new System.Drawing.Point(1059, 138);
             this.pnlMainView.Name = "pnlMainView";
-            this.pnlMainView.Size = new System.Drawing.Size(3306, 2019);
+            this.pnlMainView.Size = new System.Drawing.Size(6618, 2045);
             this.pnlMainView.TabIndex = 7;
             // 
             // tabControl
@@ -280,22 +289,136 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(3306, 2019);
+            this.tabControl.Size = new System.Drawing.Size(6618, 2045);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 24;
             // 
             // tabMainWindow
             // 
             this.tabMainWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.tabMainWindow.Controls.Add(this.tableLayoutPanel3);
-            this.tabMainWindow.Controls.Add(this.cartesianChartPerformance);
             this.tabMainWindow.Controls.Add(this.tableLayoutPanel1);
             this.tabMainWindow.Location = new System.Drawing.Point(4, 5);
             this.tabMainWindow.Name = "tabMainWindow";
             this.tabMainWindow.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMainWindow.Size = new System.Drawing.Size(3298, 2010);
+            this.tabMainWindow.Size = new System.Drawing.Size(6610, 2036);
             this.tabMainWindow.TabIndex = 0;
             this.tabMainWindow.Text = "tabPage1";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pieChartPositions, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2030F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(6604, 2030);
+            this.tableLayoutPanel1.TabIndex = 24;
+            // 
+            // pieChartPositions
+            // 
+            this.pieChartPositions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pieChartPositions.Location = new System.Drawing.Point(3, 3);
+            this.pieChartPositions.Name = "pieChartPositions";
+            this.pieChartPositions.Size = new System.Drawing.Size(3296, 2024);
+            this.pieChartPositions.TabIndex = 10;
+            this.pieChartPositions.Text = "pieChartPositions";
+            this.pieChartPositions.DataClick += new LiveCharts.Events.DataClickHandler(this.pieChartPositions_DataClick);
+            // 
+            // tabPositionWindow
+            // 
+            this.tabPositionWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tabPositionWindow.Location = new System.Drawing.Point(4, 5);
+            this.tabPositionWindow.Name = "tabPositionWindow";
+            this.tabPositionWindow.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPositionWindow.Size = new System.Drawing.Size(4954, 2036);
+            this.tabPositionWindow.TabIndex = 1;
+            this.tabPositionWindow.Text = "tabPage2";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel1);
+            this.tabPage3.Controls.Add(this.pieChart2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 5);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(4954, 2036);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pieChart2
+            // 
+            this.pieChart2.Location = new System.Drawing.Point(253, 129);
+            this.pieChart2.Name = "pieChart2";
+            this.pieChart2.Size = new System.Drawing.Size(854, 564);
+            this.pieChart2.TabIndex = 11;
+            this.pieChart2.Text = "pieChart2";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pieChart1);
+            this.panel1.Location = new System.Drawing.Point(1853, 89);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1784, 1555);
+            this.panel1.TabIndex = 12;
+            // 
+            // pieChart1
+            // 
+            this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pieChart1.Location = new System.Drawing.Point(0, 0);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(1784, 1555);
+            this.pieChart1.TabIndex = 14;
+            this.pieChart1.Text = "pieChart1";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tableLayoutPanel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3305, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(3296, 2024);
+            this.panel2.TabIndex = 11;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel4, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(3296, 2024);
+            this.tableLayoutPanel4.TabIndex = 45;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.tableLayoutPanel3);
+            this.panel3.Controls.Add(this.cartesianChartPerformance);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(3290, 803);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.stockListPanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 812);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(3290, 1209);
+            this.panel4.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -316,12 +439,12 @@
             this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceSixMonths, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceOneYear, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceYTD, 3, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1225, 106);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1360, 88);
-            this.tableLayoutPanel3.TabIndex = 42;
+            this.tableLayoutPanel3.TabIndex = 46;
             // 
             // tlpPerformanceChartDaySkipperHolder
             // 
@@ -376,7 +499,6 @@
             this.cmbSkipDaysForDataPoints.Size = new System.Drawing.Size(127, 86);
             this.cmbSkipDaysForDataPoints.TabIndex = 40;
             this.cmbSkipDaysForDataPoints.Text = "5";
-            this.cmbSkipDaysForDataPoints.SelectedIndexChanged += new System.EventHandler(this.cmbSkipDaysForDataPoints_SelectedIndexChanged);
             // 
             // rdbPerformanceMax
             // 
@@ -391,7 +513,6 @@
             this.rdbPerformanceMax.TabIndex = 39;
             this.rdbPerformanceMax.Text = "Max.";
             this.rdbPerformanceMax.UseVisualStyleBackColor = true;
-            this.rdbPerformanceMax.CheckedChanged += new System.EventHandler(this.PerformanceRadioButtonChanged);
             // 
             // rdbPerformanceFiveDays
             // 
@@ -406,7 +527,6 @@
             this.rdbPerformanceFiveDays.TabIndex = 33;
             this.rdbPerformanceFiveDays.Text = "5 T.";
             this.rdbPerformanceFiveDays.UseVisualStyleBackColor = true;
-            this.rdbPerformanceFiveDays.CheckedChanged += new System.EventHandler(this.PerformanceRadioButtonChanged);
             // 
             // rdbPerformanceOneMonth
             // 
@@ -423,7 +543,6 @@
             this.rdbPerformanceOneMonth.TabStop = true;
             this.rdbPerformanceOneMonth.Text = "1 M.";
             this.rdbPerformanceOneMonth.UseVisualStyleBackColor = true;
-            this.rdbPerformanceOneMonth.CheckedChanged += new System.EventHandler(this.PerformanceRadioButtonChanged);
             // 
             // rdbPerformanceFiveYear
             // 
@@ -438,7 +557,6 @@
             this.rdbPerformanceFiveYear.TabIndex = 38;
             this.rdbPerformanceFiveYear.Text = "5 J.";
             this.rdbPerformanceFiveYear.UseVisualStyleBackColor = true;
-            this.rdbPerformanceFiveYear.CheckedChanged += new System.EventHandler(this.PerformanceRadioButtonChanged);
             // 
             // rdbPerformanceSixMonths
             // 
@@ -453,7 +571,6 @@
             this.rdbPerformanceSixMonths.TabIndex = 35;
             this.rdbPerformanceSixMonths.Text = "6 M.";
             this.rdbPerformanceSixMonths.UseVisualStyleBackColor = true;
-            this.rdbPerformanceSixMonths.CheckedChanged += new System.EventHandler(this.PerformanceRadioButtonChanged);
             // 
             // rdbPerformanceOneYear
             // 
@@ -468,7 +585,6 @@
             this.rdbPerformanceOneYear.TabIndex = 37;
             this.rdbPerformanceOneYear.Text = "1 J.";
             this.rdbPerformanceOneYear.UseVisualStyleBackColor = true;
-            this.rdbPerformanceOneYear.CheckedChanged += new System.EventHandler(this.PerformanceRadioButtonChanged);
             // 
             // rdbPerformanceYTD
             // 
@@ -483,113 +599,29 @@
             this.rdbPerformanceYTD.TabIndex = 36;
             this.rdbPerformanceYTD.Text = "YTD";
             this.rdbPerformanceYTD.UseVisualStyleBackColor = true;
-            this.rdbPerformanceYTD.CheckedChanged += new System.EventHandler(this.PerformanceRadioButtonChanged);
             // 
             // cartesianChartPerformance
             // 
-            this.cartesianChartPerformance.Location = new System.Drawing.Point(1225, 246);
+            this.cartesianChartPerformance.Location = new System.Drawing.Point(17, 111);
             this.cartesianChartPerformance.Name = "cartesianChartPerformance";
-            this.cartesianChartPerformance.Size = new System.Drawing.Size(1975, 741);
-            this.cartesianChartPerformance.TabIndex = 32;
+            this.cartesianChartPerformance.Size = new System.Drawing.Size(1612, 633);
+            this.cartesianChartPerformance.TabIndex = 45;
             this.cartesianChartPerformance.Text = "cartesianChart1";
             // 
-            // tableLayoutPanel1
+            // stockListPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pieChartPositions, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pieChart1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 17);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1087, 1903);
-            this.tableLayoutPanel1.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1081, 95);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Overall Allocations";
-            // 
-            // pieChartPositions
-            // 
-            this.pieChartPositions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pieChartPositions.Location = new System.Drawing.Point(3, 98);
-            this.pieChartPositions.Name = "pieChartPositions";
-            this.pieChartPositions.Size = new System.Drawing.Size(1081, 850);
-            this.pieChartPositions.TabIndex = 10;
-            this.pieChartPositions.Text = "pieChartPositions";
-            this.pieChartPositions.DataClick += new LiveCharts.Events.DataClickHandler(this.pieChartPositions_DataClick);
-            // 
-            // pieChart1
-            // 
-            this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pieChart1.Location = new System.Drawing.Point(3, 1049);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(1081, 851);
-            this.pieChart1.TabIndex = 13;
-            this.pieChart1.Text = "pieChart1";
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(3, 951);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1081, 95);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Overall Allocations";
-            // 
-            // tabPositionWindow
-            // 
-            this.tabPositionWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.tabPositionWindow.Location = new System.Drawing.Point(4, 5);
-            this.tabPositionWindow.Name = "tabPositionWindow";
-            this.tabPositionWindow.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPositionWindow.Size = new System.Drawing.Size(3298, 2010);
-            this.tabPositionWindow.TabIndex = 1;
-            this.tabPositionWindow.Text = "tabPage2";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.pieChart2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 5);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(3298, 2010);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // pieChart2
-            // 
-            this.pieChart2.Location = new System.Drawing.Point(253, 129);
-            this.pieChart2.Name = "pieChart2";
-            this.pieChart2.Size = new System.Drawing.Size(854, 564);
-            this.pieChart2.TabIndex = 11;
-            this.pieChart2.Text = "pieChart2";
+            this.stockListPanel.AutoScroll = true;
+            this.stockListPanel.Location = new System.Drawing.Point(47, 20);
+            this.stockListPanel.Name = "stockListPanel";
+            this.stockListPanel.Size = new System.Drawing.Size(2197, 1167);
+            this.stockListPanel.TabIndex = 1;
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(3840, 2160);
+            this.ClientSize = new System.Drawing.Size(7680, 2186);
             this.Controls.Add(this.tlpOverallLayout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mainForm";
@@ -604,11 +636,16 @@
             this.pnlMainView.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabMainWindow.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tlpPerformanceChartDaySkipperHolder.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,27 +668,31 @@
         private System.Windows.Forms.Button btnMainView;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabMainWindow;
-        private System.Windows.Forms.RadioButton rdbPerformanceFiveDays;
-        private System.Windows.Forms.RadioButton rdbPerformanceMax;
-        private LiveCharts.WinForms.CartesianChart cartesianChartPerformance;
-        private System.Windows.Forms.RadioButton rdbPerformanceFiveYear;
-        private System.Windows.Forms.RadioButton rdbPerformanceOneMonth;
-        private System.Windows.Forms.RadioButton rdbPerformanceOneYear;
-        private System.Windows.Forms.RadioButton rdbPerformanceSixMonths;
-        private System.Windows.Forms.RadioButton rdbPerformanceYTD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
         private LiveCharts.WinForms.PieChart pieChartPositions;
-        private LiveCharts.WinForms.PieChart pieChart1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPositionWindow;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnPositionDetails;
-        private System.Windows.Forms.ComboBox cmbSkipDaysForDataPoints;
-        private System.Windows.Forms.Label label3;
+        private LiveCharts.WinForms.PieChart pieChart2;
+        private System.Windows.Forms.Panel panel1;
+        private LiveCharts.WinForms.PieChart pieChart1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tlpPerformanceChartDaySkipperHolder;
-        private LiveCharts.WinForms.PieChart pieChart2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbSkipDaysForDataPoints;
+        private System.Windows.Forms.RadioButton rdbPerformanceMax;
+        private System.Windows.Forms.RadioButton rdbPerformanceFiveDays;
+        private System.Windows.Forms.RadioButton rdbPerformanceOneMonth;
+        private System.Windows.Forms.RadioButton rdbPerformanceFiveYear;
+        private System.Windows.Forms.RadioButton rdbPerformanceSixMonths;
+        private System.Windows.Forms.RadioButton rdbPerformanceOneYear;
+        private System.Windows.Forms.RadioButton rdbPerformanceYTD;
+        private LiveCharts.WinForms.CartesianChart cartesianChartPerformance;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel stockListPanel;
     }
 }
 

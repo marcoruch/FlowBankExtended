@@ -17,6 +17,8 @@ using LiveCharts.Configurations;
 using FlowBank_Extended.Charting.ChartModels;
 using LiveCharts.Defaults;
 using System.Windows.Media;
+using System.Net;
+using Svg;
 
 namespace FlowBank_Extended
 {
@@ -35,7 +37,15 @@ namespace FlowBank_Extended
         public mainForm()
         {
             InitializeComponent();
+            GoIntoFullscreen();
             LoadAccounts();
+        }
+
+        private void GoIntoFullscreen()
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private async void LoadAccounts()
@@ -203,7 +213,8 @@ namespace FlowBank_Extended
                     Title = item.First().SymbolType.ToString(),
                     Values = new ChartValues<double>(new List<double>() { GetFullGroupValue(item) }),
                     DataLabels = true,
-                    LabelPoint = labelPoint
+                    LabelPoint = labelPoint,
+                    Tag =  item.First().SymbolId
                 });
             }
 
@@ -316,8 +327,145 @@ namespace FlowBank_Extended
 
         private void pieChartPositions_DataClick(object sender, ChartPoint chartPoint)
         {
-            var positionSymbol = chartPoint.SeriesView.Title;
-            tabControl.SelectedTab = tabPositionWindow;
+
+            var xxxxx = chartPoint.SeriesView.Title;
+
+            var summary = new AccountSummaryEndpoint().GetByAccountNr((string)cmbAccount.SelectedItem, "CHF").Result;
+
+            stockListPanel.Controls.Clear();
+            stockListPanel.Height = summary.Data.Positions.Count *100;
+            stockListPanel.Width = 900;
+            int counter = 0;
+
+            Panel headerPanel = new Panel();
+            headerPanel.Width = stockListPanel.Width;
+            headerPanel.Height = 60;
+            headerPanel.Location = new Point(5, 0);
+            headerPanel.BackColor = 0 % 2 == 0 ? System.Drawing.Color.Black : System.Drawing.Color.MidnightBlue;
+
+            Label headerIconName = new Label();
+            headerIconName.Text = "";
+            headerIconName.ForeColor = System.Drawing.Color.PaleGreen;
+
+            Label headerLabelName = new Label();
+            headerLabelName.Text = "Firma";
+            headerLabelName.ForeColor = System.Drawing.Color.PaleGreen;
+
+
+            Label headerAveragePrice = new Label();
+            headerAveragePrice.Text = "Avg. Price";
+            headerAveragePrice.ForeColor = System.Drawing.Color.PaleGreen;
+
+            Label headerCurrentPrice = new Label();
+            headerCurrentPrice.Text = "Price";
+            headerCurrentPrice.ForeColor = System.Drawing.Color.PaleGreen;
+
+            TableLayoutPanel headerTableLayoutPanel = new TableLayoutPanel();
+            headerTableLayoutPanel.ColumnCount = 4;
+            headerTableLayoutPanel.Height = 100;
+            headerTableLayoutPanel.Padding = new Padding(5, 5, 0, 0);
+            headerTableLayoutPanel.RowStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+
+            headerTableLayoutPanel.Controls.Add(headerIconName, 0, 0);
+            headerTableLayoutPanel.Controls.Add(headerLabelName, 1, 0);
+            headerTableLayoutPanel.Controls.Add(headerAveragePrice, 2, 0);
+            headerTableLayoutPanel.Controls.Add(headerCurrentPrice, 3, 0);
+            headerPanel.Controls.Add(headerTableLayoutPanel);
+            stockListPanel.Controls.Add(headerPanel);
+
+            foreach (var positionInformation in summary.Data.Positions)
+            {
+                counter++;
+                var symbolInformation = new SymbolsEndpoint().GetById(positionInformation.SymbolId).Result;
+
+                Panel panel = new Panel();
+                panel.Width = stockListPanel.Width;
+                panel.Height = 100;
+                panel.Location = new Point(5, 100 * counter);
+                panel.BackColor = counter % 2 == 0 ? System.Drawing.Color.DarkGreen : System.Drawing.Color.MidnightBlue;
+
+                TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                tableLayoutPanel.ColumnCount = 4;
+                tableLayoutPanel.Height = 100;
+                tableLayoutPanel.Width = panel.Width;
+                tableLayoutPanel.Padding = new Padding(5, 5, 0, 0);
+                tableLayoutPanel.Dock = DockStyle.Fill;
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 200));
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Height = 90;
+                pictureBox.Width = 90;
+                pictureBox.Padding = new Padding(0);
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                if (!string.IsNullOrEmpty(symbolInformation.Data.Icon))
+                {
+                    if (symbolInformation.Data.Icon.Contains(".png"))
+                    {
+                        pictureBox.Image = GetBitmapFromPngUrl(symbolInformation.Data.Icon);
+                    }
+                    else
+                    {
+                        pictureBox.Image = GetBitmapFromSvgUrl(symbolInformation.Data.Icon);
+                    }
+                }
+
+                Label labelName = new Label();
+                labelName.Padding = new Padding(5, 5, 0, 0);
+                labelName.Location = new Point(30, 50);
+                labelName.AutoSize = true;
+                labelName.Text = symbolInformation.Data.Name;
+                labelName.ForeColor = System.Drawing.Color.PaleGreen;
+
+                Label averagePrice = new Label();
+                averagePrice.Text = $"{positionInformation.AveragePrice} {positionInformation.Currency}";
+                averagePrice.ForeColor = System.Drawing.Color.PaleGreen;
+
+                Label currentPrice = new Label();
+                currentPrice.Text = $"{positionInformation.Price} {positionInformation.Currency}";
+                currentPrice.ForeColor = (double.Parse(positionInformation.AveragePrice) < double.Parse(positionInformation.Price)) ? System.Drawing.Color.OrangeRed : System.Drawing.Color.LightGreen;
+
+                tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
+                tableLayoutPanel.Controls.Add(labelName, 1, 0);
+                tableLayoutPanel.Controls.Add(averagePrice, 2, 0);
+                tableLayoutPanel.Controls.Add(currentPrice, 3, 0);
+                panel.Controls.Add(tableLayoutPanel);
+                stockListPanel.Controls.Add(panel);
+
+
+            }
+
+            // var positionSymbol = chartPoint.SeriesView.Title;
+            // tabControl.SelectedTab = tabPositionWindow;
+        }
+
+        private static Bitmap GetBitmapFromSymbolId(string symbolId)
+        {
+            var rawr = new SymbolsEndpoint().GetById(symbolId).Result;
+
+            return GetBitmapFromSvgUrl(rawr.Data.Icon);
+        }
+
+        private static Bitmap GetBitmapFromPngUrl(string pngUrl)
+        {
+            using (var response = WebRequest.Create(pngUrl).GetResponse())
+            using (var stream = response.GetResponseStream())
+            return (Bitmap)Image.FromStream(stream);
+        }
+
+        private static Bitmap GetBitmapFromSvgUrl(string svgUrl)
+        {
+            try
+            {
+
+                using (var response = WebRequest.Create(svgUrl).GetResponse())
+                using (var stream = response.GetResponseStream())
+                return SvgDocument.Open<SvgDocument>(stream).Draw();
+            }
+            catch (Exception e1)
+            {
+                return null;
+            }
         }
     }
 

@@ -10,8 +10,8 @@ namespace FlowBank_Extended.API.Entities.Symbol
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("symbolId")]
-        public string SymbolId { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }

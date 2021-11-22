@@ -10,7 +10,6 @@ C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\LiveCharts.WinForms.pdb
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\LiveCharts.WinForms.xml
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\LiveCharts.Wpf.pdb
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\LiveCharts.Wpf.xml
-C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank Extended.csprojAssemblyReference.cache
 C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank_Extended.mainForm.resources
 C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank_Extended.Properties.Resources.resources
 C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank Extended.csproj.GenerateResource.cache
@@ -21,3 +20,16 @@ C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank Extended.pdb
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank_Extended.Controls.PerformanceChartParameters.resources
+C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank Extended.csprojAssemblyReference.cache
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\Fizzler.dll
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\Svg.dll
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Buffers.dll
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Memory.dll
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Numerics.Vectors.dll
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\Fizzler.pdb
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\Svg.xml
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Buffers.xml
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Memory.xml
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Numerics.Vectors.xml
+C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
