@@ -334,7 +334,7 @@ namespace FlowBank_Extended
 
             stockListPanel.Controls.Clear();
             stockListPanel.Height = summary.Data.Positions.Count *100;
-            stockListPanel.Width = 900;
+
             int counter = 0;
 
             Panel headerPanel = new Panel();
@@ -363,7 +363,9 @@ namespace FlowBank_Extended
             TableLayoutPanel headerTableLayoutPanel = new TableLayoutPanel();
             headerTableLayoutPanel.ColumnCount = 4;
             headerTableLayoutPanel.Height = 100;
+            headerTableLayoutPanel.Width = stockListPanel.Width;
             headerTableLayoutPanel.Padding = new Padding(5, 5, 0, 0);
+            headerTableLayoutPanel.Dock = DockStyle.Fill;
             headerTableLayoutPanel.RowStyles.Add(new ColumnStyle(SizeType.Percent, 25));
 
             headerTableLayoutPanel.Controls.Add(headerIconName, 0, 0);
@@ -389,8 +391,8 @@ namespace FlowBank_Extended
                 tableLayoutPanel.Height = 100;
                 tableLayoutPanel.Width = panel.Width;
                 tableLayoutPanel.Padding = new Padding(5, 5, 0, 0);
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 25));
                 tableLayoutPanel.Dock = DockStyle.Fill;
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 200));
 
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Height = 90;
@@ -411,9 +413,6 @@ namespace FlowBank_Extended
                 }
 
                 Label labelName = new Label();
-                labelName.Padding = new Padding(5, 5, 0, 0);
-                labelName.Location = new Point(30, 50);
-                labelName.AutoSize = true;
                 labelName.Text = symbolInformation.Data.Name;
                 labelName.ForeColor = System.Drawing.Color.PaleGreen;
 
