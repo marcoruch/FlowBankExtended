@@ -19,6 +19,7 @@ using LiveCharts.Defaults;
 using System.Windows.Media;
 using System.Net;
 using Svg;
+using FlowBank_Extended.Controls;
 
 namespace FlowBank_Extended
 {
@@ -378,93 +379,78 @@ namespace FlowBank_Extended
             foreach (var positionInformation in summary.Data.Positions)
             {
                 counter++;
-                var symbolInformation = new SymbolsEndpoint().GetById(positionInformation.SymbolId).Result;
-
-                Panel panel = new Panel();
-                panel.Width = stockListPanel.Width;
-                panel.Height = 100;
-                panel.Location = new Point(5, 100 * counter);
-                panel.BackColor = counter % 2 == 0 ? System.Drawing.Color.DarkGreen : System.Drawing.Color.MidnightBlue;
-
-                TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
-                tableLayoutPanel.ColumnCount = 4;
-                tableLayoutPanel.Height = 100;
-                tableLayoutPanel.Width = panel.Width;
-                tableLayoutPanel.Padding = new Padding(5, 5, 0, 0);
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 25));
-                tableLayoutPanel.Dock = DockStyle.Fill;
-
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Height = 90;
-                pictureBox.Width = 90;
-                pictureBox.Padding = new Padding(0);
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                if (!string.IsNullOrEmpty(symbolInformation.Data.Icon))
-                {
-                    if (symbolInformation.Data.Icon.Contains(".png"))
-                    {
-                        pictureBox.Image = GetBitmapFromPngUrl(symbolInformation.Data.Icon);
-                    }
-                    else
-                    {
-                        pictureBox.Image = GetBitmapFromSvgUrl(symbolInformation.Data.Icon);
-                    }
-                }
-
-                Label labelName = new Label();
-                labelName.Text = symbolInformation.Data.Name;
-                labelName.ForeColor = System.Drawing.Color.PaleGreen;
-
-                Label averagePrice = new Label();
-                averagePrice.Text = $"{positionInformation.AveragePrice} {positionInformation.Currency}";
-                averagePrice.ForeColor = System.Drawing.Color.PaleGreen;
-
-                Label currentPrice = new Label();
-                currentPrice.Text = $"{positionInformation.Price} {positionInformation.Currency}";
-                currentPrice.ForeColor = (double.Parse(positionInformation.AveragePrice) < double.Parse(positionInformation.Price)) ? System.Drawing.Color.OrangeRed : System.Drawing.Color.LightGreen;
-
-                tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
-                tableLayoutPanel.Controls.Add(labelName, 1, 0);
-                tableLayoutPanel.Controls.Add(averagePrice, 2, 0);
-                tableLayoutPanel.Controls.Add(currentPrice, 3, 0);
-                panel.Controls.Add(tableLayoutPanel);
-                stockListPanel.Controls.Add(panel);
-
-
+                AddPanelRowOld(counter, positionInformation);
+                AddPanelRowNew(counter, positionInformation);
+                counter++;
             }
 
             // var positionSymbol = chartPoint.SeriesView.Title;
             // tabControl.SelectedTab = tabPositionWindow;
         }
 
-        private static Bitmap GetBitmapFromSymbolId(string symbolId)
+        private void AddPanelRowNew(int counter, Position positionInformation)
         {
-            var rawr = new SymbolsEndpoint().GetById(symbolId).Result;
+            var symbolInformation = new SymbolsEndpoint().GetById(positionInformation.SymbolId).Result;
 
-            return GetBitmapFromSvgUrl(rawr.Data.Icon);
+            PositionOverviewTableRow positionOverviewTableRow = new PositionOverviewTableRow();
+            positionOverviewTableRow.SetInformation(positionInformation, symbolInformation.Data);
+            stockListPanel.Controls.Add(positionOverviewTableRow);
         }
 
-        private static Bitmap GetBitmapFromPngUrl(string pngUrl)
+        private void AddPanelRowOld(int counter, Position positionInformation)
         {
-            using (var response = WebRequest.Create(pngUrl).GetResponse())
-            using (var stream = response.GetResponseStream())
-            return (Bitmap)Image.FromStream(stream);
-        }
+            var symbolInformation = new SymbolsEndpoint().GetById(positionInformation.SymbolId).Result;
 
-        private static Bitmap GetBitmapFromSvgUrl(string svgUrl)
-        {
-            try
-            {
+            Panel panel = new Panel();
+            panel.Width = stockListPanel.Width;
+            panel.Height = 100;
+            panel.Location = new Point(5, 100 * counter);
+            panel.BackColor = counter % 2 == 0 ? System.Drawing.Color.DarkGreen : System.Drawing.Color.MidnightBlue;
 
-                using (var response = WebRequest.Create(svgUrl).GetResponse())
-                using (var stream = response.GetResponseStream())
-                return SvgDocument.Open<SvgDocument>(stream).Draw();
-            }
-            catch (Exception e1)
+            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.ColumnCount = 4;
+            tableLayoutPanel.Height = 100;
+            tableLayoutPanel.Width = panel.Width;
+            tableLayoutPanel.Padding = new Padding(5, 5, 0, 0);
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 25));
+            tableLayoutPanel.Dock = DockStyle.Fill;
+
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Height = 90;
+            pictureBox.Width = 90;
+            pictureBox.Padding = new Padding(0);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            if (!string.IsNullOrEmpty(symbolInformation.Data.Icon))
             {
-                return null;
+                if (symbolInformation.Data.Icon.Contains(".png"))
+                {
+                    pictureBox.Image = GetBitmapFromPngUrl(symbolInformation.Data.Icon);
+                }
+                else
+                {
+                    pictureBox.Image = GetBitmapFromSvgUrl(symbolInformation.Data.Icon);
+                }
             }
+
+            Label labelName = new Label();
+            labelName.Text = symbolInformation.Data.Name;
+            labelName.ForeColor = System.Drawing.Color.PaleGreen;
+
+            Label averagePrice = new Label();
+            averagePrice.Text = $"{positionInformation.AveragePrice} {positionInformation.Currency}";
+            averagePrice.ForeColor = System.Drawing.Color.PaleGreen;
+
+            Label currentPrice = new Label();
+            currentPrice.Text = $"{positionInformation.Price} {positionInformation.Currency}";
+            currentPrice.ForeColor = (double.Parse(positionInformation.AveragePrice) < double.Parse(positionInformation.Price)) ? System.Drawing.Color.OrangeRed : System.Drawing.Color.LightGreen;
+
+            tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
+            tableLayoutPanel.Controls.Add(labelName, 1, 0);
+            tableLayoutPanel.Controls.Add(averagePrice, 2, 0);
+            tableLayoutPanel.Controls.Add(currentPrice, 3, 0);
+            panel.Controls.Add(tableLayoutPanel);
+            stockListPanel.Controls.Add(panel);
         }
     }
 
