@@ -105,6 +105,13 @@
     <Compile Include="Controls\PerformanceChartParameters.Designer.cs">
       <DependentUpon>PerformanceChartParameters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PositionOverviewTableRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PositionOverviewTableRow.Designer.cs">
+      <DependentUpon>PositionOverviewTableRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\IconHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +122,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\PerformanceChartParameters.resx">
       <DependentUpon>PerformanceChartParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PositionOverviewTableRow.resx">
+      <DependentUpon>PositionOverviewTableRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

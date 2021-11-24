@@ -33,3 +33,4 @@ C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Buffers.xml
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Memory.xml
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Numerics.Vectors.xml
 C:\Projects\FlowBankExtended\FlowBank Extended\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projects\FlowBankExtended\FlowBank Extended\obj\Debug\FlowBank_Extended.Controls.PositionOverviewTableRow.resources
