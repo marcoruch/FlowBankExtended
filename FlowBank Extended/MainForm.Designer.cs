@@ -49,6 +49,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tabPositionWindow = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.pieChart2 = new LiveCharts.WinForms.PieChart();
+            this.tlpStockPanelHolder = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cartesianChartPerformance = new LiveCharts.WinForms.CartesianChart();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPerformanceChartDaySkipperHolder = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,14 +71,7 @@
             this.rdbPerformanceSixMonths = new System.Windows.Forms.RadioButton();
             this.rdbPerformanceOneYear = new System.Windows.Forms.RadioButton();
             this.rdbPerformanceYTD = new System.Windows.Forms.RadioButton();
-            this.cartesianChartPerformance = new LiveCharts.WinForms.CartesianChart();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.stockListPanel = new System.Windows.Forms.Panel();
-            this.tabPositionWindow = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
-            this.pieChart2 = new LiveCharts.WinForms.PieChart();
             this.tlpOverallLayout.SuspendLayout();
             this.tlpMenuBar.SuspendLayout();
             this.tlpMenuLeft.SuspendLayout();
@@ -80,11 +84,15 @@
             this.panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tlpPerformanceChartDaySkipperHolder.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tlpStockPanelHolder.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tlpPerformanceChartDaySkipperHolder.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpOverallLayout
@@ -349,225 +357,28 @@
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(3296, 2024);
             this.tableLayoutPanel4.TabIndex = 45;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tableLayoutPanel3);
-            this.panel3.Controls.Add(this.cartesianChartPerformance);
+            this.panel3.Controls.Add(this.tableLayoutPanel6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(3290, 803);
+            this.panel3.Size = new System.Drawing.Size(3290, 601);
             this.panel3.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 8;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23F));
-            this.tableLayoutPanel3.Controls.Add(this.tlpPerformanceChartDaySkipperHolder, 7, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceMax, 6, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceFiveDays, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceOneMonth, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceFiveYear, 5, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceSixMonths, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceOneYear, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceYTD, 3, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1360, 88);
-            this.tableLayoutPanel3.TabIndex = 46;
-            // 
-            // tlpPerformanceChartDaySkipperHolder
-            // 
-            this.tlpPerformanceChartDaySkipperHolder.ColumnCount = 2;
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.34266F));
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.65734F));
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpPerformanceChartDaySkipperHolder.Controls.Add(this.label3, 0, 0);
-            this.tlpPerformanceChartDaySkipperHolder.Controls.Add(this.cmbSkipDaysForDataPoints, 1, 0);
-            this.tlpPerformanceChartDaySkipperHolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPerformanceChartDaySkipperHolder.Location = new System.Drawing.Point(1046, 3);
-            this.tlpPerformanceChartDaySkipperHolder.Name = "tlpPerformanceChartDaySkipperHolder";
-            this.tlpPerformanceChartDaySkipperHolder.RowCount = 1;
-            this.tlpPerformanceChartDaySkipperHolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPerformanceChartDaySkipperHolder.Size = new System.Drawing.Size(311, 82);
-            this.tlpPerformanceChartDaySkipperHolder.TabIndex = 43;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(10);
-            this.label3.Size = new System.Drawing.Size(172, 82);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Skip Days";
-            // 
-            // cmbSkipDaysForDataPoints
-            // 
-            this.cmbSkipDaysForDataPoints.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSkipDaysForDataPoints.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbSkipDaysForDataPoints.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbSkipDaysForDataPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbSkipDaysForDataPoints.FormattingEnabled = true;
-            this.cmbSkipDaysForDataPoints.ItemHeight = 80;
-            this.cmbSkipDaysForDataPoints.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "5",
-            "7",
-            "15",
-            "30"});
-            this.cmbSkipDaysForDataPoints.Location = new System.Drawing.Point(181, 3);
-            this.cmbSkipDaysForDataPoints.Name = "cmbSkipDaysForDataPoints";
-            this.cmbSkipDaysForDataPoints.Size = new System.Drawing.Size(127, 86);
-            this.cmbSkipDaysForDataPoints.TabIndex = 40;
-            this.cmbSkipDaysForDataPoints.Text = "5";
-            // 
-            // rdbPerformanceMax
-            // 
-            this.rdbPerformanceMax.AutoSize = true;
-            this.rdbPerformanceMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbPerformanceMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPerformanceMax.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.rdbPerformanceMax.Location = new System.Drawing.Point(897, 3);
-            this.rdbPerformanceMax.Name = "rdbPerformanceMax";
-            this.rdbPerformanceMax.Padding = new System.Windows.Forms.Padding(10);
-            this.rdbPerformanceMax.Size = new System.Drawing.Size(98, 49);
-            this.rdbPerformanceMax.TabIndex = 39;
-            this.rdbPerformanceMax.Text = "Max.";
-            this.rdbPerformanceMax.UseVisualStyleBackColor = true;
-            // 
-            // rdbPerformanceFiveDays
-            // 
-            this.rdbPerformanceFiveDays.AutoSize = true;
-            this.rdbPerformanceFiveDays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbPerformanceFiveDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPerformanceFiveDays.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.rdbPerformanceFiveDays.Location = new System.Drawing.Point(3, 3);
-            this.rdbPerformanceFiveDays.Name = "rdbPerformanceFiveDays";
-            this.rdbPerformanceFiveDays.Padding = new System.Windows.Forms.Padding(10);
-            this.rdbPerformanceFiveDays.Size = new System.Drawing.Size(89, 49);
-            this.rdbPerformanceFiveDays.TabIndex = 33;
-            this.rdbPerformanceFiveDays.Text = "5 T.";
-            this.rdbPerformanceFiveDays.UseVisualStyleBackColor = true;
-            // 
-            // rdbPerformanceOneMonth
-            // 
-            this.rdbPerformanceOneMonth.AutoSize = true;
-            this.rdbPerformanceOneMonth.Checked = true;
-            this.rdbPerformanceOneMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbPerformanceOneMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPerformanceOneMonth.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.rdbPerformanceOneMonth.Location = new System.Drawing.Point(152, 3);
-            this.rdbPerformanceOneMonth.Name = "rdbPerformanceOneMonth";
-            this.rdbPerformanceOneMonth.Padding = new System.Windows.Forms.Padding(10);
-            this.rdbPerformanceOneMonth.Size = new System.Drawing.Size(93, 49);
-            this.rdbPerformanceOneMonth.TabIndex = 34;
-            this.rdbPerformanceOneMonth.TabStop = true;
-            this.rdbPerformanceOneMonth.Text = "1 M.";
-            this.rdbPerformanceOneMonth.UseVisualStyleBackColor = true;
-            // 
-            // rdbPerformanceFiveYear
-            // 
-            this.rdbPerformanceFiveYear.AutoSize = true;
-            this.rdbPerformanceFiveYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbPerformanceFiveYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPerformanceFiveYear.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.rdbPerformanceFiveYear.Location = new System.Drawing.Point(748, 3);
-            this.rdbPerformanceFiveYear.Name = "rdbPerformanceFiveYear";
-            this.rdbPerformanceFiveYear.Padding = new System.Windows.Forms.Padding(10);
-            this.rdbPerformanceFiveYear.Size = new System.Drawing.Size(87, 49);
-            this.rdbPerformanceFiveYear.TabIndex = 38;
-            this.rdbPerformanceFiveYear.Text = "5 J.";
-            this.rdbPerformanceFiveYear.UseVisualStyleBackColor = true;
-            // 
-            // rdbPerformanceSixMonths
-            // 
-            this.rdbPerformanceSixMonths.AutoSize = true;
-            this.rdbPerformanceSixMonths.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbPerformanceSixMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPerformanceSixMonths.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.rdbPerformanceSixMonths.Location = new System.Drawing.Point(301, 3);
-            this.rdbPerformanceSixMonths.Name = "rdbPerformanceSixMonths";
-            this.rdbPerformanceSixMonths.Padding = new System.Windows.Forms.Padding(10);
-            this.rdbPerformanceSixMonths.Size = new System.Drawing.Size(93, 49);
-            this.rdbPerformanceSixMonths.TabIndex = 35;
-            this.rdbPerformanceSixMonths.Text = "6 M.";
-            this.rdbPerformanceSixMonths.UseVisualStyleBackColor = true;
-            // 
-            // rdbPerformanceOneYear
-            // 
-            this.rdbPerformanceOneYear.AutoSize = true;
-            this.rdbPerformanceOneYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbPerformanceOneYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPerformanceOneYear.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.rdbPerformanceOneYear.Location = new System.Drawing.Point(599, 3);
-            this.rdbPerformanceOneYear.Name = "rdbPerformanceOneYear";
-            this.rdbPerformanceOneYear.Padding = new System.Windows.Forms.Padding(10);
-            this.rdbPerformanceOneYear.Size = new System.Drawing.Size(87, 49);
-            this.rdbPerformanceOneYear.TabIndex = 37;
-            this.rdbPerformanceOneYear.Text = "1 J.";
-            this.rdbPerformanceOneYear.UseVisualStyleBackColor = true;
-            // 
-            // rdbPerformanceYTD
-            // 
-            this.rdbPerformanceYTD.AutoSize = true;
-            this.rdbPerformanceYTD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbPerformanceYTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPerformanceYTD.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.rdbPerformanceYTD.Location = new System.Drawing.Point(450, 3);
-            this.rdbPerformanceYTD.Name = "rdbPerformanceYTD";
-            this.rdbPerformanceYTD.Padding = new System.Windows.Forms.Padding(10);
-            this.rdbPerformanceYTD.Size = new System.Drawing.Size(95, 49);
-            this.rdbPerformanceYTD.TabIndex = 36;
-            this.rdbPerformanceYTD.Text = "YTD";
-            this.rdbPerformanceYTD.UseVisualStyleBackColor = true;
-            // 
-            // cartesianChartPerformance
-            // 
-            this.cartesianChartPerformance.Location = new System.Drawing.Point(17, 111);
-            this.cartesianChartPerformance.Name = "cartesianChartPerformance";
-            this.cartesianChartPerformance.Size = new System.Drawing.Size(1612, 633);
-            this.cartesianChartPerformance.TabIndex = 45;
-            this.cartesianChartPerformance.Text = "cartesianChart1";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.stockListPanel);
+            this.panel4.Controls.Add(this.tlpStockPanelHolder);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 812);
+            this.panel4.Location = new System.Drawing.Point(3, 610);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3290, 1209);
+            this.panel4.Size = new System.Drawing.Size(3290, 1411);
             this.panel4.TabIndex = 1;
-            // 
-            // stockListPanel
-            // 
-            this.stockListPanel.AutoScroll = true;
-            this.stockListPanel.Location = new System.Drawing.Point(47, 20);
-            this.stockListPanel.Name = "stockListPanel";
-            this.stockListPanel.Size = new System.Drawing.Size(2197, 1167);
-            this.stockListPanel.TabIndex = 1;
             // 
             // tabPositionWindow
             // 
@@ -616,6 +427,254 @@
             this.pieChart2.TabIndex = 11;
             this.pieChart2.Text = "pieChart2";
             // 
+            // tlpStockPanelHolder
+            // 
+            this.tlpStockPanelHolder.ColumnCount = 1;
+            this.tlpStockPanelHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpStockPanelHolder.Controls.Add(this.stockListPanel, 0, 0);
+            this.tlpStockPanelHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpStockPanelHolder.Location = new System.Drawing.Point(0, 0);
+            this.tlpStockPanelHolder.Name = "tlpStockPanelHolder";
+            this.tlpStockPanelHolder.RowCount = 1;
+            this.tlpStockPanelHolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1334F));
+            this.tlpStockPanelHolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpStockPanelHolder.Size = new System.Drawing.Size(3290, 1411);
+            this.tlpStockPanelHolder.TabIndex = 0;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.panel5, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.panel6, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.30616F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.69384F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(3290, 601);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.cartesianChartPerformance);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(4, 102);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(3282, 495);
+            this.panel5.TabIndex = 50;
+            // 
+            // cartesianChartPerformance
+            // 
+            this.cartesianChartPerformance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesianChartPerformance.Location = new System.Drawing.Point(0, 0);
+            this.cartesianChartPerformance.Name = "cartesianChartPerformance";
+            this.cartesianChartPerformance.Size = new System.Drawing.Size(3282, 495);
+            this.cartesianChartPerformance.TabIndex = 47;
+            this.cartesianChartPerformance.Text = "cartesianChart1";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.tableLayoutPanel3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(4, 4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(3282, 91);
+            this.panel6.TabIndex = 51;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 8;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23F));
+            this.tableLayoutPanel3.Controls.Add(this.tlpPerformanceChartDaySkipperHolder, 7, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceMax, 6, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceFiveDays, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceOneMonth, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceFiveYear, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceSixMonths, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceOneYear, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rdbPerformanceYTD, 3, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(3282, 91);
+            this.tableLayoutPanel3.TabIndex = 51;
+            // 
+            // tlpPerformanceChartDaySkipperHolder
+            // 
+            this.tlpPerformanceChartDaySkipperHolder.ColumnCount = 2;
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.34266F));
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.65734F));
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPerformanceChartDaySkipperHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPerformanceChartDaySkipperHolder.Controls.Add(this.label3, 0, 0);
+            this.tlpPerformanceChartDaySkipperHolder.Controls.Add(this.cmbSkipDaysForDataPoints, 1, 0);
+            this.tlpPerformanceChartDaySkipperHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpPerformanceChartDaySkipperHolder.Location = new System.Drawing.Point(2530, 3);
+            this.tlpPerformanceChartDaySkipperHolder.Name = "tlpPerformanceChartDaySkipperHolder";
+            this.tlpPerformanceChartDaySkipperHolder.RowCount = 1;
+            this.tlpPerformanceChartDaySkipperHolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPerformanceChartDaySkipperHolder.Size = new System.Drawing.Size(749, 85);
+            this.tlpPerformanceChartDaySkipperHolder.TabIndex = 43;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(10);
+            this.label3.Size = new System.Drawing.Size(423, 85);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Skip Days";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbSkipDaysForDataPoints
+            // 
+            this.cmbSkipDaysForDataPoints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSkipDaysForDataPoints.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbSkipDaysForDataPoints.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbSkipDaysForDataPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbSkipDaysForDataPoints.FormattingEnabled = true;
+            this.cmbSkipDaysForDataPoints.ItemHeight = 80;
+            this.cmbSkipDaysForDataPoints.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "5",
+            "7",
+            "15",
+            "30"});
+            this.cmbSkipDaysForDataPoints.Location = new System.Drawing.Point(432, 3);
+            this.cmbSkipDaysForDataPoints.Name = "cmbSkipDaysForDataPoints";
+            this.cmbSkipDaysForDataPoints.Size = new System.Drawing.Size(314, 86);
+            this.cmbSkipDaysForDataPoints.TabIndex = 40;
+            this.cmbSkipDaysForDataPoints.Text = "5";
+            // 
+            // rdbPerformanceMax
+            // 
+            this.rdbPerformanceMax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdbPerformanceMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbPerformanceMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPerformanceMax.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rdbPerformanceMax.Location = new System.Drawing.Point(2169, 3);
+            this.rdbPerformanceMax.Name = "rdbPerformanceMax";
+            this.rdbPerformanceMax.Padding = new System.Windows.Forms.Padding(10);
+            this.rdbPerformanceMax.Size = new System.Drawing.Size(355, 85);
+            this.rdbPerformanceMax.TabIndex = 39;
+            this.rdbPerformanceMax.Text = "Max.";
+            this.rdbPerformanceMax.UseVisualStyleBackColor = true;
+            // 
+            // rdbPerformanceFiveDays
+            // 
+            this.rdbPerformanceFiveDays.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdbPerformanceFiveDays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbPerformanceFiveDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPerformanceFiveDays.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rdbPerformanceFiveDays.Location = new System.Drawing.Point(3, 3);
+            this.rdbPerformanceFiveDays.Name = "rdbPerformanceFiveDays";
+            this.rdbPerformanceFiveDays.Padding = new System.Windows.Forms.Padding(10);
+            this.rdbPerformanceFiveDays.Size = new System.Drawing.Size(355, 85);
+            this.rdbPerformanceFiveDays.TabIndex = 33;
+            this.rdbPerformanceFiveDays.Text = "5 T.";
+            this.rdbPerformanceFiveDays.UseVisualStyleBackColor = true;
+            // 
+            // rdbPerformanceOneMonth
+            // 
+            this.rdbPerformanceOneMonth.Checked = true;
+            this.rdbPerformanceOneMonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdbPerformanceOneMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbPerformanceOneMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPerformanceOneMonth.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rdbPerformanceOneMonth.Location = new System.Drawing.Point(364, 3);
+            this.rdbPerformanceOneMonth.Name = "rdbPerformanceOneMonth";
+            this.rdbPerformanceOneMonth.Padding = new System.Windows.Forms.Padding(10);
+            this.rdbPerformanceOneMonth.Size = new System.Drawing.Size(355, 85);
+            this.rdbPerformanceOneMonth.TabIndex = 34;
+            this.rdbPerformanceOneMonth.TabStop = true;
+            this.rdbPerformanceOneMonth.Text = "1 M.";
+            this.rdbPerformanceOneMonth.UseVisualStyleBackColor = true;
+            // 
+            // rdbPerformanceFiveYear
+            // 
+            this.rdbPerformanceFiveYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdbPerformanceFiveYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbPerformanceFiveYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPerformanceFiveYear.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rdbPerformanceFiveYear.Location = new System.Drawing.Point(1808, 3);
+            this.rdbPerformanceFiveYear.Name = "rdbPerformanceFiveYear";
+            this.rdbPerformanceFiveYear.Padding = new System.Windows.Forms.Padding(10);
+            this.rdbPerformanceFiveYear.Size = new System.Drawing.Size(355, 85);
+            this.rdbPerformanceFiveYear.TabIndex = 38;
+            this.rdbPerformanceFiveYear.Text = "5 J.";
+            this.rdbPerformanceFiveYear.UseVisualStyleBackColor = true;
+            // 
+            // rdbPerformanceSixMonths
+            // 
+            this.rdbPerformanceSixMonths.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdbPerformanceSixMonths.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbPerformanceSixMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPerformanceSixMonths.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rdbPerformanceSixMonths.Location = new System.Drawing.Point(725, 3);
+            this.rdbPerformanceSixMonths.Name = "rdbPerformanceSixMonths";
+            this.rdbPerformanceSixMonths.Padding = new System.Windows.Forms.Padding(10);
+            this.rdbPerformanceSixMonths.Size = new System.Drawing.Size(355, 85);
+            this.rdbPerformanceSixMonths.TabIndex = 35;
+            this.rdbPerformanceSixMonths.Text = "6 M.";
+            this.rdbPerformanceSixMonths.UseVisualStyleBackColor = true;
+            // 
+            // rdbPerformanceOneYear
+            // 
+            this.rdbPerformanceOneYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdbPerformanceOneYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbPerformanceOneYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPerformanceOneYear.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rdbPerformanceOneYear.Location = new System.Drawing.Point(1447, 3);
+            this.rdbPerformanceOneYear.Name = "rdbPerformanceOneYear";
+            this.rdbPerformanceOneYear.Padding = new System.Windows.Forms.Padding(10);
+            this.rdbPerformanceOneYear.Size = new System.Drawing.Size(355, 85);
+            this.rdbPerformanceOneYear.TabIndex = 37;
+            this.rdbPerformanceOneYear.Text = "1 J.";
+            this.rdbPerformanceOneYear.UseVisualStyleBackColor = true;
+            // 
+            // rdbPerformanceYTD
+            // 
+            this.rdbPerformanceYTD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdbPerformanceYTD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbPerformanceYTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPerformanceYTD.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rdbPerformanceYTD.Location = new System.Drawing.Point(1086, 3);
+            this.rdbPerformanceYTD.Name = "rdbPerformanceYTD";
+            this.rdbPerformanceYTD.Padding = new System.Windows.Forms.Padding(10);
+            this.rdbPerformanceYTD.Size = new System.Drawing.Size(355, 85);
+            this.rdbPerformanceYTD.TabIndex = 36;
+            this.rdbPerformanceYTD.Text = "YTD";
+            this.rdbPerformanceYTD.UseVisualStyleBackColor = true;
+            // 
+            // stockListPanel
+            // 
+            this.stockListPanel.AutoScroll = true;
+            this.stockListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stockListPanel.Location = new System.Drawing.Point(3, 3);
+            this.stockListPanel.Name = "stockListPanel";
+            this.stockListPanel.Size = new System.Drawing.Size(3284, 1405);
+            this.stockListPanel.TabIndex = 3;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -640,12 +699,15 @@
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tlpPerformanceChartDaySkipperHolder.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.tlpStockPanelHolder.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tlpPerformanceChartDaySkipperHolder.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,6 +741,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TableLayoutPanel tlpStockPanelHolder;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Panel panel5;
+        private LiveCharts.WinForms.CartesianChart cartesianChartPerformance;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tlpPerformanceChartDaySkipperHolder;
         private System.Windows.Forms.Label label3;
@@ -690,8 +758,6 @@
         private System.Windows.Forms.RadioButton rdbPerformanceSixMonths;
         private System.Windows.Forms.RadioButton rdbPerformanceOneYear;
         private System.Windows.Forms.RadioButton rdbPerformanceYTD;
-        private LiveCharts.WinForms.CartesianChart cartesianChartPerformance;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel stockListPanel;
     }
 }

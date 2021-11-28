@@ -112,6 +112,7 @@
       <DependentUpon>PositionOverviewTableRow.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\IconHelper.cs" />
+    <Compile Include="Helpers\PositionOverViewTableToPanelLoader.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,6 +21,7 @@ using System.Net;
 using Svg;
 using FlowBank_Extended.Controls;
 using FlowBank_Extended.Helpers;
+using System.Threading;
 
 namespace FlowBank_Extended
 {
@@ -69,18 +70,18 @@ namespace FlowBank_Extended
         {
             lblTotalAmount.Text = $"{summary.MoneyUsedForMargin} USD";
 
-            DrawPositionTable(summary);
+            List<Task> tasks = new List<Task>()
+            {
+                Task.Run(() => { new PositionOverViewTableToPanelLoader(stockListPanel, summary.Positions); }),
+                DrawPerformance(summary)
+            };
+
+            await Task.WhenAll(tasks);
+
             DrawOverallSummary(summary);
 
             DrawAssetClassSummary(summary);
 
-            await DrawPerformance(summary);
-
-        }
-
-        private void DrawPositionTable(Summary summary)
-        {
-            new PositionOverViewTableToPanelLoader(stockListPanel, summary.Positions);
         }
 
         private async Task DrawPerformance(Summary summary)
@@ -272,6 +273,8 @@ namespace FlowBank_Extended
         private async void cmbAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
             var summary = await new AccountSummaryEndpoint().GetByAccountNr("QIG1063.001", "CHF");
+
+
             await LoadSummary(summary.Data);
         }
 

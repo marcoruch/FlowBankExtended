@@ -1,47 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using FlowBank_Extended.API;
-using FlowBank_Extended.API.Entities.Symbol;
+﻿using FlowBank_Extended.API.Entities.Symbol;
 using FlowBank_Extended.Helpers;
-using FlowBank_Extended.API.Endpoints;
+
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace FlowBank_Extended.Controls
 {
     public partial class PositionOverviewTableRow : UserControl
     {
-        public Label LabelStockAverageBuy
-        {
-            get { return this.lblStockAverageBuy; }
-        }
-        public Label LabelStockCurrentPrice
-        {
-            get { return this.lblStockCurrentPrice; }
-        }
-        public Label LabelStockGainPerShare
-        {
-            get { return this.lblStockGainPerShare; }
-        }
-        public Label LabelStockName
-        {
-            get { return this.lblStockName; }
-        }
-
-        public TableLayoutPanel MainRowLayoutPanel
-        {
-            get { return this.tlpMainRowLayoutPanel;  }
-        }
-
         private bool IsHeaderRow { get; }
 
         public PositionOverviewTableRow(bool isHeaderRow = false)
         {
+            this.Visible = false;
             InitializeComponent();
             this.IsHeaderRow = isHeaderRow;
 
@@ -57,10 +30,13 @@ namespace FlowBank_Extended.Controls
             lblStockAverageBuy.Text = $"{positionInformation.AveragePrice} {positionInformation.Currency}";
             lblStockCurrentPrice.Text = $"{positionInformation.Price} {positionInformation.Currency}";
 
-            double plPerShare = double.Parse(positionInformation.Price) - double.Parse(positionInformation.AveragePrice);
+            double plPerShare = Math.Round(double.Parse(positionInformation.Price) - double.Parse(positionInformation.AveragePrice), 2);
             lblStockGainPerShare.Text = $"{plPerShare} {positionInformation.Currency}";
 
             lblStockGainPerShare.ForeColor = plPerShare <= 0 ? Color.OrangeRed : Color.LightGreen;
+
+            lblHoldings.Text = $"{Math.Round(double.Parse(positionInformation.ConvertedValue), 2)} {positionInformation.Currency}";
+            lblHoldings.ForeColor = plPerShare <= 0 ? Color.OrangeRed : Color.LightGreen;
 
             TrySetIcon(symbolInformation);
         }
@@ -68,10 +44,24 @@ namespace FlowBank_Extended.Controls
 
         private void SetHeaderRowInformation()
         {
-            this.lblStockName.Text = "Name";
-            this.lblStockAverageBuy.Text = "Average Buy";
-            this.lblStockCurrentPrice.Text = "Current Price";
-            this.lblStockGainPerShare.Text = "Gains per Share";
+            lblStockName.Text = "Name";
+            lblStockAverageBuy.Text = "Average Buy";
+            lblStockCurrentPrice.Text = "Current Price";
+            lblStockGainPerShare.Text = "Gains Per Share";
+            lblHoldings.Text = "Holdings";
+            MakeHeaderRowStyle(lblStockName);
+            MakeHeaderRowStyle(lblStockAverageBuy);
+            MakeHeaderRowStyle(lblStockCurrentPrice);
+            MakeHeaderRowStyle(lblStockGainPerShare);
+            MakeHeaderRowStyle(lblHoldings);
+            this.Visible = true;
+            this.Update();
+        }
+
+        private void MakeHeaderRowStyle(Label label)
+        {
+            label.Font = new Font(lblStockName.Font.FontFamily.Name, 16, FontStyle.Bold);
+            label.ForeColor = Color.MediumAquamarine;
         }
 
         private void TrySetIcon(SymbolResult symbolInformation)
@@ -87,67 +77,29 @@ namespace FlowBank_Extended.Controls
                     pbIcon.Image = IconHelper.GetBitmapFromSvgUrl(symbolInformation.Icon);
                 }
             }
-        }
-    }
 
-    public class PositionOverViewTableToPanelLoader
-    {
-        // To maybe load later
-        public PositionOverViewTableToPanelLoader(Panel panel)
-        {
-            panel.Controls.Clear();
-            AddHeaderRow(panel);
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddEllipse(pbIcon.DisplayRectangle);
+            pbIcon.Region = new Region(gp);
         }
 
-        public PositionOverViewTableToPanelLoader(Panel panel, List<Position> positions)
+        internal void SetColor(int counter)
         {
-            LoadControl(panel, positions);
-        }
-
-
-        public void LoadControl(Panel panel, List<Position> positions)
-        {
-            panel.Controls.Clear();
-
-            AddHeaderRow(panel);
-
-            int counter = 1;
-            foreach (var position in positions)
+            if (counter % 2 == 0)
             {
-                AddPanelRowNew(panel, position, counter++);
+                this.BackColor = Color.FromArgb(175, Color.LightCyan);
             }
-
+            else
+            {
+                this.BackColor = Color.FromArgb(175, Color.LightGoldenrodYellow);
+            }
         }
 
-
-        private void AddHeaderRow(Panel panel)
+        public void RecalculateRowWidthToPanel(Panel panel)
         {
-            PositionOverviewTableRow positionOverviewTableRow = new PositionOverviewTableRow(true);
-
-            SetWidthToPanelWidth(panel, positionOverviewTableRow);
-            panel.Controls.Add(positionOverviewTableRow);
-        }
-
-        private static void SetWidthToPanelWidth(Panel panel, PositionOverviewTableRow positionOverviewTableRow)
-        {
-            positionOverviewTableRow.Width = panel.Width;
-            positionOverviewTableRow.MainRowLayoutPanel.ColumnStyles[0].SizeType = SizeType.Absolute;
-            positionOverviewTableRow.MainRowLayoutPanel.ColumnStyles[0].Width = 90;
-        }
-
-        public void AddPanelRowNew(Panel panel, Position positionInformation, int counter)
-        {
-            var symbolInformation = new SymbolsEndpoint().GetById(positionInformation.SymbolId).Result;
-
-            PositionOverviewTableRow positionOverviewTableRow = new PositionOverviewTableRow();
-            positionOverviewTableRow.Location = new Point(positionOverviewTableRow.Location.X, counter * positionOverviewTableRow.Height);
-
-            SetWidthToPanelWidth(panel, positionOverviewTableRow);
-
-
-            positionOverviewTableRow.SetInformation(positionInformation, symbolInformation.Data);
-            panel.Controls.Add(positionOverviewTableRow);
+            this.Width = panel.Width - 35;
+            tlpMainRowLayoutPanel.ColumnStyles[0].SizeType = SizeType.Absolute;
+            tlpMainRowLayoutPanel.ColumnStyles[0].Width = 90;
         }
     }
-
 }
